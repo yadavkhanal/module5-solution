@@ -6,7 +6,7 @@
 	angular.module('restaurant')
 	.controller('InfoController', InfoController);
 	InfoController.$inject = ['MenuService'];
-	function ItemsComponentController(MenuService){
-		var $ctrl = this;
+	function InfoController(MenuService){
+		var vm = this;
 	}
 })();

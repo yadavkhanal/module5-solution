@@ -5,35 +5,33 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Sign Up</title>
   </head>
-  <body ng-controller="SignUpController as reg">
+  <body ng-controller="SignUpController as vm">
     <h1>Sign Up</h1>
 
     <fieldset>
       <legend>Sign Up</legend>
       <form name='regForm' novalidate>
 
-        <input type="text" name="username" placeholder="Firsnt Name"
-          ng-model="reg.user.username"
+        <input type="text" name="firstName" placeholder="Firsnt Name"
+          ng-model="vm.user.firstName"
           required>
-          {{ reg.user.username }}
           <span
-            ng-if="(regForm.username.$error.required) && regForm.username.$touched">
+            ng-if="(regForm.firstName.$error.required) && regForm.firstName.$touched">
            First Name is required
           </span>
          
           <br>
-          <input type="text" name="username" placeholder="Firsnt Name"
-          ng-model="reg.user.username"
+          <input type="text" name="lastName" placeholder="Last Name"
+          ng-model="vm.user.lastName"
           required>
-          {{ reg.user.username }}
           <span
-            ng-if="(regForm.username.$error.required) && regForm.username.$touched">
-           First Name is required
+            ng-if="(regForm.lastName.$error.required) && regForm.lastName.$touched">
+           Last Name is required
           </span>
           <br>
 
         <input type="email" name="email" placeholder="Email"
-          ng-model="reg.user.email"
+          ng-model="vm.user.email"
           required>
           <span ng-if="regForm.email.$invalid && regForm.email.$touched">
             Must be a valid email address: handle@domain format
@@ -41,21 +39,21 @@
           <br>
 
         <input type="text" name="phone" placeholder="Phone ###-###-####"
-          ng-model="reg.user.phone"
+          ng-model="vm.user.phone"
           pattern="(\d{3})-(\d{3})-(\d{4})">
           <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
             Phone must be in the format ###-###-####.
           </span>
           <br>
  <input type="text" name="favorite" placeholder="Favorite menu number"
-          ng-model="reg.user.favorite">
+          ng-model="vm.user.favorite">
           <span ng-if="regForm.favorite.$invalid && regForm.favorite.$touched">
             No such menu number exists.
           </span>
           <br>
         <button
           ng-disabled="regForm.$invalid"
-          ng-click="reg.submit()">Submit</button>
+          ng-click="vm.submit()">Submit</button>
 
           <div style="margin-top: 10px;">
             Your information has been saved.
