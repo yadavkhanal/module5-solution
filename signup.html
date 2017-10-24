@@ -47,7 +47,7 @@
           <br>
  <input type="text" name="favorite" placeholder="Favorite menu number"
           ng-model="vm.user.favorite">
-          <span ng-if="regForm.favorite.$invalid && regForm.favorite.$touched">
+          <span ng-if="!vm.menuExists">
             No such menu number exists.
           </span>
           <br>
