@@ -18,3 +18,11 @@
 .ui-view-placeholder {
     margin-top: 60px;
 }
+
+.ng-touched.ng-invlaid {
+border: 2px red solid;	
+}
+
+.ng-touch.ng-valid {
+	border: 2px green solid;
+}
