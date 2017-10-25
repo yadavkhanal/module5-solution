@@ -5,9 +5,8 @@
 			<div class="menu-item-photo">
 				<div class="ng-binding">{{vm.user.menu.short_name}}</div>
 				<img ng-if="vm.user.imagePath" class="img-responsive" width="250" height="150"
-					ng-src="https://yadavkhanal-module5-solution.herokuapp.com/images/{{vm.user.imagePath}"
-					alt="vm.user.menu.name"
-					src="https://yadavkhanal-module5-solution.herokuapp.com/images/{{vm.user.imagePath}}">
+					ng-src="{{vm.user.imagePath}}"
+					alt="vm.user.menu.name">
 			</div>
 			<div class="menu-item-price ng-binding">
 				<span class="ng-binding"> </span> $ {{vm.user.menu.price_large}} <span
