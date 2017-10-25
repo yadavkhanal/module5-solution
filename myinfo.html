@@ -2,6 +2,10 @@
 <div class="menu-item-tile">
 <div class="row">
 	<div class="col-md-12" ng-if="vm.user && vm.user.signup">
+		<h3 style="margin-left:5px;" class=".text-info">First Name: <span class="label label-default">{{vm.user.firstName}}</span></h3>
+<h3 style="margin-left:5px;" class=".text-info">Last Name: <span class="label label-default">{{vm.user.lastName}}</span></h3>
+<h3  style="margin-left:5px;"class=".text-info">Phone:  <span class="label label-default">{{vm.user.phone}}</span></h3>
+<h3 style="margin-left:5px;" class=".text-info">Email:  <span class="label label-default">{{vm.user.email}}</span></h3>
 		<div class="col-sm-5">
 			<div class="menu-item-photo">
 				<div class="ng-binding">{{vm.user.menu.short_name}}</div>
