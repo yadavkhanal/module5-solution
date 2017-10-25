@@ -44,6 +44,9 @@
           <span ng-if="!vm.user.menuExists">
             No such menu number exists.
           </span>
+          <span ng-if=" vm.user.favorite && !vm.menuItemExists(vm.user.favorite) && regForm.favorite.$touched">
+            No such menu item exists. (bonus)
+          </span>
           <br>
         <button class="btn-default btn-primary"
           ng-disabled="regForm.$invalid"
