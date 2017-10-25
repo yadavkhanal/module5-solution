@@ -49,7 +49,7 @@
           ng-disabled="regForm.$invalid"
           ng-click="vm.submit()">Submit</button>
 
-          <div style="margin-top: 10px;">
+          <div style="margin-top: 10px;" ng-if="vm.user.signup">
             Your information has been saved.
           </div>
 

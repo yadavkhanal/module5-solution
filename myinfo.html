@@ -1,6 +1,7 @@
 
-<div class="menu-item-tile col-md-12" ng-if="vm.user && vm.user.signup">
-	<div class="row">
+<div class="menu-item-tile">
+<div class="row">
+	<div class="col-md-12" ng-if="vm.user && vm.user.signup">
 		<div class="col-sm-5">
 			<div class="menu-item-photo">
 				<div class="ng-binding">{{vm.user.menu.short_name}}</div>
@@ -18,8 +19,10 @@
 			<p class="menu-item-details ng-binding">{{vm.user.menu.description}}</p>
 		</div>
 	</div>
-	<hr class="visible-xs">
-</div>
+	</div>
+		<hr class="visible-xs">
+	</div>
+
 <div class="menu-item-price ng-binding" ng-show="vm.user && !vm.user.signup">
 	<span class="ng-binding"> </span> Not signed up yet<span
 		class="ng-binding"></span>

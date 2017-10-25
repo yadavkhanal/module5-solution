@@ -15,9 +15,9 @@
 			promise.then(function(response){
 				if(vm.user.favorite === response.short_name){
 					vm.user.menu = response;
-					vm.user.signup = true;
 					MenuService.setUser(vm.user);
-					$state.go('myinfo');
+					vm.user.signup = true;
+					//$state.go('myinfo');
 				}else{
 					vm.user.signup = false;
 					vm.menuExists = false;
