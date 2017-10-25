@@ -10,6 +10,7 @@
 		var vm = this;
 		vm.user = {firstName: '', lastName: '', email: '', phone: '', favorite: '', menuExists:true, signup:false};
 		var menuItems = [];
+		//precheck if the menu item exists (bonus work)
 		function getMenuItems(){
 			var promise = MenuService.getAllMenuItems();
 			promise.then(function(response){
@@ -19,7 +20,8 @@
 			});
 			
 		}
-		getMenuItems();	
+		getMenuItems();	//call the function to populate the menu items
+		
 		vm.submit = function(){
 			var promise = MenuService.getMenuItemsByShortName(vm.user.favorite);
 			promise.then(function(response){
