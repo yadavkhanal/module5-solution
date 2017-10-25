@@ -1,35 +1,47 @@
 
 <div class="menu-item-tile">
-<div class="row">
-	<div class="col-md-12" ng-if="vm.user && vm.user.signup">
-		<h3 style="margin-left:5px;" class=".text-info">First Name: <span class="label label-default">{{vm.user.firstName}}</span></h3>
-<h3 style="margin-left:5px;" class=".text-info">Last Name: <span class="label label-default">{{vm.user.lastName}}</span></h3>
-<h3  style="margin-left:5px;"class=".text-info">Phone:  <span class="label label-default">{{vm.user.phone}}</span></h3>
-<h3 style="margin-left:5px;" class=".text-info">Email:  <span class="label label-default">{{vm.user.email}}</span></h3>
-		<div class="col-sm-5">
-			<div class="menu-item-photo">
-				<div class="ng-binding">{{vm.user.menu.short_name}}</div>
-				<img ng-if="vm.user.imagePath" class="img-responsive" width="250" height="150"
-					ng-src="{{vm.user.imagePath}}"
-					alt="vm.user.menu.name">
+	<div class="row">
+		<div class="col-md-12" ng-if="vm.user && vm.user.signup">
+			<h3 style="margin-left: 5px;" class=".text-info">
+				First Name: <span class="label label-default">{{vm.user.firstName}}</span>
+			</h3>
+			<h3 style="margin-left: 5px;" class=".text-info">
+				Last Name: <span class="label label-default">{{vm.user.lastName}}</span>
+			</h3>
+			<h3 style="margin-left: 5px;" class=".text-info">
+				Phone: <span class="label label-default">{{vm.user.phone}}</span>
+			</h3>
+			<h3 style="margin-left: 5px;" class=".text-info">
+				Email: <span class="label label-default">{{vm.user.email}}</span>
+			</h3>
+			<h3 style="margin-left: 5px;" class=".text-info">
+				Favorite Menu 
+			</h3>
+			<div class="col-sm-5">
+				<div class="menu-item-photo">
+					<div class="ng-binding">{{vm.user.menu.short_name}}</div>
+					<img ng-if="vm.user.imagePath" class="img-responsive" width="250"
+						height="150" ng-src="{{vm.user.imagePath}}"
+						alt="vm.user.menu.name">
+				</div>
+				<div class="menu-item-price ng-binding">
+					<span class="ng-binding"> </span> $ {{vm.user.menu.price_large}} <span
+						class="ng-binding"></span>
+				</div>
 			</div>
-			<div class="menu-item-price ng-binding">
-				<span class="ng-binding"> </span> $ {{vm.user.menu.price_large}} <span
-					class="ng-binding"></span>
+			<div class="menu-item-description col-sm-7">
+				<h3 class="menu-item-title ng-binding">{{vm.user.menu.name}}</h3>
+				<p class="menu-item-details ng-binding">{{vm.user.menu.description}}</p>
 			</div>
 		</div>
-		<div class="menu-item-description col-sm-7">
-			<h3 class="menu-item-title ng-binding">{{vm.user.menu.name}}</h3>
-			<p class="menu-item-details ng-binding">{{vm.user.menu.description}}</p>
-		</div>
 	</div>
-	</div>
-		<hr class="visible-xs">
-	</div>
+	<hr class="visible-xs">
+</div>
 
-<div class="menu-item-price ng-binding" ng-show="vm.user && !vm.user.signup">
-	<span style="margin-left:5px;" class="ng-binding"> </span> Not signed up yet<span
-		class="ng-binding"></span>
+<div class="menu-item-price ng-binding"
+	ng-show="vm.user && !vm.user.signup">
+	<span style="margin-left: 5px;" class="ng-binding"> </span> Not signed
+	up yet<span class="ng-binding"></span>
 	<button class="btn-default btn-primary" ng-click="vm.signup()"
 		style="cursor: pointer">Sign up Now!</button>
 </div>
