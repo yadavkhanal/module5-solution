@@ -6,6 +6,8 @@
 	MenuService.$inject = [ '$http', 'ApiPath' ];
 	function MenuService($http, ApiPath) {
 		var service = this;
+		var menuItemsEndPoint = ApiPath + '/menu_items/';
+		service.user={};
 
 		service.getCategories = function() {
 			return $http.get(ApiPath + '/categories.json').then(
@@ -26,6 +28,19 @@
 					function(response) {
 						return response.data;
 					});
+		};
+		
+		service.getMenuItemsByShortName = function(shortName) {
+			return $http.get( menuItemsEndPoint + shortName +'.json').then(
+					function(response) {
+						return response.data;
+					});
+		};
+		service.setUser = function(user){
+			service.user = user;
+		};
+		service.getUser = function(){
+			return service.user;
 		};
 
 	}

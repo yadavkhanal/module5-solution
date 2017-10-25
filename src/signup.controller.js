@@ -11,9 +11,11 @@
 		vm.menuExists = true;
 		vm.user = {firstName: '', lastName: '', email: '', phone: '', favorite: ''};
 		vm.submit = function(){
-			var promise = MenuService.getMenuItems(vm.user.favorite);
+			var promise = MenuService.getMenuItemsByShortName(vm.user.favorite);
 			promise.then(function(response){
-				if(vm.user.favorite === response.category.short_name){
+				if(vm.user.favorite === response.short_name){
+					vm.user.menu = response;
+					MenuService.setUser(vm.user);
 					$state.go('myinfo');
 				}else{
 					vm.menuExists = false;
