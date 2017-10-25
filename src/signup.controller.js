@@ -9,15 +9,17 @@
 	function SignUpController(MenuService, $state){
 		var vm = this;
 		vm.menuExists = true;
-		vm.user = {firstName: '', lastName: '', email: '', phone: '', favorite: ''};
+		vm.user = {firstName: '', lastName: '', email: '', phone: '', favorite: '', signup:false};
 		vm.submit = function(){
 			var promise = MenuService.getMenuItemsByShortName(vm.user.favorite);
 			promise.then(function(response){
 				if(vm.user.favorite === response.short_name){
 					vm.user.menu = response;
+					vm.user.signup = true;
 					MenuService.setUser(vm.user);
 					$state.go('myinfo');
 				}else{
+					vm.user.signup = false;
 					vm.menuExists = false;
 				}								
 			}).catch(function(error){

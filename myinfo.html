@@ -1,17 +1,16 @@
 
-<div class="menu-item-tile col-md-6">
+<div class="menu-item-tile col-md-6" ng-if="vm.user && vm.user.signup">
 	<div class="row">
 		<div class="col-sm-5">
 			<div class="menu-item-photo">
 				<div class="ng-binding">{{vm.user.menu.short_name}}</div>
-				<img class="img-responsive" width="250" height="150"
+				<img ng-if="vm.user.imagePath" class="img-responsive" width="250" height="150"
 					ng-src="https://yadavkhanal-module5-solution.herokuapp.com/images/{{vm.user.imagePath}"
-					}
-						alt="vm.user.menu.name"
+					alt="vm.user.menu.name"
 					src="https://yadavkhanal-module5-solution.herokuapp.com/images/{{vm.user.imagePath}}">
 			</div>
 			<div class="menu-item-price ng-binding">
-				<span class="ng-binding"> </span> {{vm.user.menu.price_large}} <span
+				<span class="ng-binding"> </span> $ {{vm.user.menu.price_large}} <span
 					class="ng-binding"></span>
 			</div>
 		</div>
@@ -22,8 +21,9 @@
 	</div>
 	<hr class="visible-xs">
 </div>
-<div class="menu-item-price ng-binding">
+<div class="menu-item-price ng-binding" ng-show="vm.user && !vm.user.signup">
 	<span class="ng-binding"> </span> Not signed up yet<span
 		class="ng-binding"></span>
-	<button class="btn-default btn-primary" ng-click="vm.signup()" style="cursor: pointer">Sign up Now!</button>
+	<button class="btn-default btn-primary" ng-click="vm.signup()"
+		style="cursor: pointer">Sign up Now!</button>
 </div>
