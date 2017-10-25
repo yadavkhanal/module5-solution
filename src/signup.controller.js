@@ -13,8 +13,7 @@
 		vm.submit = function(){
 			var promise = MenuService.getMenuItems(vm.user.favorite);
 			promise.then(function(response){
-				if(vm.favorite === response.data.short_name){
-					vm.user.favorite = response.data.short_name;
+				if(vm.user.favorite === response.category.short_name){
 					$state.go('myinfo');
 				}else{
 					vm.menuExists = false;
