@@ -130,7 +130,13 @@ a[ui-sref="admin.auth"] {
   }
   /* End Header */
 }
+input[type=text] {
+   color: black;
+}
 
+input[type=email] {
+   color: black;
+}
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
