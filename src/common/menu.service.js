@@ -10,10 +10,22 @@
 		service.user={};
 
 		service.getCategories = function() {
-			return $http.get(ApiPath + '/categories.json').then(
-					function(response) {
-						return response.data;
-					});
+			// return $http.get(ApiPath + '/categories.json').then(
+			// 		function(response) {
+			// 			return response.data;
+			// 		});
+			return $http.get(
+				{
+					method: 'GET',
+					url: 'https://test-api.rize.systems/v1/uers/me',
+					headers:{'Content-Type': 'application/json',
+  'Authorization': "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC90ZXN0LWFwaS5yaXplLnN5c3RlbXNcL3YxXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4NDExNjg3NiwiZXhwIjoxNTg0MTIwNDc2LCJuYmYiOjE1ODQxMTY4NzYsImp0aSI6ImloR2hHRFpiMUJ2UFg2dmsiLCJzdWIiOjEyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.qI2lcYjn0W_d5AvvJXYJWc7UHV6hWaJj5GPFhZnJBOM"}
+			}
+			).then(function(response) {
+				console.log(response.data);
+				return response.data;
+			});
+			
 		};
 
 		service.getMenuItems = function(category) {
